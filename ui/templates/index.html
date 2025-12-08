@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jarvis Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Jarvis Assistant</h1>
+        <div id="history" class="history"></div>
+        <div class="status-bar">
+            <div id="status-light" class="status-light">Status: Connecting...</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const socket = io();
+            const history = document.getElementById('history');
+            const statusLight = document.getElementById('status-light');
+
+            socket.on('status_update', function(data) {
+                statusLight.textContent = `Status: ${data.status}`;
+            });
+
+            socket.on('new_message', function(data) {
+                const p = document.createElement('p');
+                p.innerHTML = `<strong>${data.sender}:</strong> ${data.message}`;
+                history.appendChild(p);
+                history.scrollTop = history.scrollHeight;
+            });
+        });
+    </script>
+</body>
+</html>
