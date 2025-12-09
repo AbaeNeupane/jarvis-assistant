@@ -7,7 +7,7 @@ This is an open-source, fully offline personal assistant inspired by Jarvis. It 
 - **Wake Word:** OpenWakeWord
 - **Speech-to-Text (STT):** Whisper.cpp
 - **LLM Server:** Ollama
-- **LLM Model:** Mistral (7B)
+- **LLM Model:** Mistral (7B) new Phi3:mini
 - **Text-to-Speech (TTS):** Piper TTS
 - **UI Framework:** Flask
 
