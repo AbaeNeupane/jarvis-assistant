@@ -22,7 +22,7 @@ This is an open-source, fully offline personal assistant inspired by Jarvis. It 
     ```
 
 3.  **Install/Compile External Tools:**
-    - **Ollama:** Download and install from [https://ollama.com/](https://ollama.com/). Then run `ollama pull mistral`.
+    - **Ollama:** Download and install from [https://ollama.com/](https://ollama.com/). Then run `ollama pull mistral` or `ollama pull phi3:mini`.
     - **Whisper.cpp:** Compile from source from its official GitHub repository.
     - **Piper:** Download the executable for your OS from the Piper TTS GitHub releases page.
 
